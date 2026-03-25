@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100]; // Declare an array to hold up to 100 integers
+    int size, i, searchKey, found = 0;
+
+    // 1. Input the size of the array
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &size);
+
+    // 2. Input the elements of the array
+    printf("Enter %d integers, one by one:\n", size);
+    for (i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // 3. Input the element to search for
+    printf("\nEnter the number you want to search for: ");
+    scanf("%d", &searchKey);
+
+    // 4. Perform the linear search
+    for (i = 0; i < size; i++) {
+        if (arr[i] == searchKey) {
+            found = 1;
+            break; // Terminate the loop if the element is found
+        }
+    }
+
+    // 5. Display the result
+    if (found == 1) {
+        // Since array indices start at 0, add 1 for user-friendly position display
+        printf("\n%d is present at location %d.\n", searchKey, i + 1);
+    } else {
+        printf("\n%d is not present in the array.\n", searchKey);
+    }
+
+    return 0;
+}
